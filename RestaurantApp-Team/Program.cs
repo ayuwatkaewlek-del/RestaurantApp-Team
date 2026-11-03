@@ -20,7 +20,8 @@ namespace RestaurantApp_Team
         new Restaurant { Name = "Tee noi", Type = "Shabu", Rating = 4.2 },
         new Restaurant { Name = "MK", Type = "Suki", Rating = 4.7 },
         new Restaurant { Name = "Fuji", Type = "Japanese", Rating = 4.8 },
-        new Restaurant { Name = "Somtam", Type = "Esan food", Rating = 4.8 }
+        new Restaurant { Name = "Somtam", Type = "Esan food", Rating = 4.8 },
+        new Restaurant { Name = "BBQ Plaza", Type = "Japanese BBQ", Rating = 4.8 }
     };
 
         static void Main(string[] args)
@@ -59,7 +60,25 @@ namespace RestaurantApp_Team
         // คน A รับผิดชอบ
         static void AddRestaurant()
         {
-            Console.WriteLine("Not completed");
+            Console.Write("Enter Restaurant Name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Enter Restaurant Type: ");
+            string type = Console.ReadLine();
+
+            Console.Write("Enter Restaurant Rating: ");
+            double rating = Convert.ToDouble(Console.ReadLine());
+
+            Restaurant newRestaurant = new Restaurant()
+            {
+                Name = name,
+                Type = type,
+                Rating = rating
+            };
+
+            restaurants.Add(newRestaurant);
+
+            Console.WriteLine("Restaurant Added Successfully!");
         }
 
         // คน B รับผิดชอบ
